@@ -12,6 +12,7 @@ html, body {
     width:268px;
     height: 474px;
     background-color: #FFFFFF;
+    margin: 15px 50px;
 }
 
 .img-card{
@@ -52,24 +53,4 @@ html, body {
 }
 .botao-comprar{
     padding:10px 5px ;
-}
-
-.menu{
-    background-color: #666666;
-    color:#FFFFFF;
-    border: 1px solid;
-    display:flex;
-}
-.item-menu{
-    list-style: none;
-    padding:10px 20px;
-}
-.item-menu:hover{
-    background-color: #999999;
-}
-
-.link-menu{
-    text-decoration: none;
-    color:#FFFFFF;
-    font-weight: bold;
 }
