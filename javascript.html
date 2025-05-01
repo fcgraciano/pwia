@@ -1,15 +1,24 @@
 <script>
-   
-    var altura = 20
-    var largura = 10
-    var area = altura * largura
+   var numero1 = Number( prompt("Digite um numero") ) 
+   var numero2 = Number( prompt("Digite outro numero") )
+   var soma = numero1 + numero2
+   if(soma >= 60)
+   {
+        alert('você é da 3º idade')
+   }
+   else if(soma >= 30)
+   {
+        alert('vc é da 2º idade')
+   }
+   else
+   {
+    alert('vc é da 1º idade')
+   } 
 
-    //var idade = prompt("Digite sua idade")
-    //alert(idade)
-    par
-    /*
-    Peça para o usuário 
-    digitar dois números
-    e exiba a soma deles
-    */
+   var tabuada = Number(prompt('Qual tabuada vc quer ver ?'))
+
+   for(var i = 0; i <= 10; i++)
+   {
+        document.write("<h1>"+i+" X "+tabuada+" = "+(i*tabuada)+"</h1>")
+   }
 </script>
