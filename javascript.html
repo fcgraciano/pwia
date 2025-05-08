@@ -1,4 +1,5 @@
 <script>
+     /*
    var numero1 = Number( prompt("Digite um numero") ) 
    var numero2 = Number( prompt("Digite outro numero") )
    var soma = numero1 + numero2
@@ -21,4 +22,40 @@
    {
         document.write("<h1>"+i+" X "+tabuada+" = "+(i*tabuada)+"</h1>")
    }
+   */
+
+
+   function MostrarAlerta(texto)
+   {
+          alert(texto)
+   }
+
+   function somar(numero1,numero2)
+   {
+      var soma = Number(numero1)+Number(numero2)
+      return soma
+   }
+
+   function cliquebotao()
+   {
+   var num1 = prompt('digite o priumeiro numero')
+   var num2 = prompt('digite o segundo numero')
+   var resultado = somar(num1,num2)
+   MostrarAlerta( resultado )
+   }
+
+   //MostrarAlerta( somar( prompt('digita o primeiro numero'), prompt('digite o segundo numero') ) )
+   /*
+   Faça a função MOstrarAlerta exibir
+   a soma de dois numero que o usuario digitar
+   */
+
+   //MostrarAlerta("Hello world")
+   //MostrarAlerta(prompt("digite algo"))
+
+
+
+
 </script>
+
+<button onclick="cliquebotao()" > Somar </button>
