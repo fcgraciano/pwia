@@ -46,6 +46,38 @@
             return Math.floor(Math.random() * numeroMaximo)
          }
 
+        exibirLista(nomes)
+        nomes.reverse(); //Inverte a ordem dos elementos.
+        exibirLista(nomes)
+        nomes.unshift("Novo nome no inicio da lista");
+        exibirLista(nomes)
+        nomes.shift()//remove do começo
+        exibirLista(nomes)
+        nomes.push("Joaquim do FInal da lista")
+        exibirLista(nomes)
+        nomes.pop()// remove do final
+        exibirLista(nomes)
+       
+
+        function exibirLista(lista)
+        {
+            document.write("<hr>")
+            lista.forEach(
+                (valor, indice) => {
+                    document.write("<br>indice:"+indice+" Valor é :"+valor+"<br>")
+                }
+            ); 
+            document.write("<hr>")
+        }
+
+        
+         nomes.shift(); // remove o primeiro elemento
+          // adiciona 0 no começo
+         nomes.pop(); // remove o último elemento
+         nomes.push(4); // adiciona 4 no final
+
+        //Novo modelo de for
+
 
     </script>
 </body>
