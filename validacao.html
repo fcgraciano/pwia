@@ -8,9 +8,13 @@
 </head>
 
 <body>
-    <form onsubmit="return validarFormulario()"  action="salvar.html" method="post">
+    <form onsubmit="return validarFormulario()" action="salvar.html" method="post">
         <label>Cep</label>
-        <input onkeydown="ValidarTexto()"  type="text" name="cep" id="cep" class="campo" /><br><br>
+        <input onkeydown="ValidarTexto()" type="text" name="cep" id="cep" class="campo" />
+        <button id="" type="button" onclick="Clicar()">
+            Consultar o cep
+        </button>
+        <br><br>
         <label>Endereço</label>
         <input type="text" name="endereco" id="endereco" class="campo" /> <br><br>
         <label>Número</label>
@@ -27,8 +31,30 @@
     </form>
 
     <script>
-        function validarFormulario()
-        {
+
+        function Clicar() {
+            var input = document.getElementById("cep")
+
+            var url = "https://viacep.com.br/ws/" + input.value + "/json/"
+            fetch(url)
+                .then(response => response.json())
+                .then(dados => {
+                    var cep = document.getElementById('cep')
+                    var endereco = document.getElementById('endereco')
+                    var numero = document.getElementById('numero')
+                    var bairro = document.getElementById('bairro')
+                    var cidade = document.getElementById('cidade')
+                    var estado = document.getElementById('estado')
+                    endereco.value = dados.logradouro
+                    bairro.value = dados.bairro
+                    cidade.value = dados.localidade
+                    estado.value = dados.estado
+                }
+                )
+                .catch(error => console.error('Erro:', error));
+        }
+
+        function validarFormulario() {
             var cep = document.getElementById('cep')
             var endereco = document.getElementById('endereco')
             var numero = document.getElementById('numero')
@@ -36,8 +62,7 @@
             var cidade = document.getElementById('cidade')
             var estado = document.getElementById('estado')
 
-            if(cep.value == "")
-            {
+            if (cep.value == "") {
                 alert('campo cep não pode ficar em branco')
                 cep.style.border = '2px solid red'
                 return false;
@@ -45,12 +70,10 @@
 
         }
 
-        function ValidarTexto()
-        {
+        function ValidarTexto() {
             var cep = document.getElementById('cep')
-            console.log( cep.style.border )
-            if(cep.style.border != "")
-            {
+            console.log(cep.style.border)
+            if (cep.style.border != "") {
                 cep.style.border = ""
             }
         }

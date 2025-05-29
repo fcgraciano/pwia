@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <label>CEP</label>
+    <input type="text" id="cep" />
+    <button id="" onclick="Clicar()">
+        Ver objeto
+    </button>
+
+    <script>
+
+
+        function Clicar() {
+            var input = document.getElementById("cep")
+
+            var url = "https://viacep.com.br/ws/" + input.value + "/json/"
+            fetch(url)
+                .then(response => response.json()) 
+                .then(data => console.log(data))   
+                .catch(error => console.error('Erro:', error));
+        }
+    </script>
+
+</body>
+
+</html>
